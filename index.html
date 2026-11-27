@@ -2,30 +2,92 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Mistail</title>
+<title>Mistail – Giochi per smartphone</title>
+<meta name="description" content="Mistail è uno studio indipendente italiano che crea giochi per smartphone.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap">
 <style>
-  :root{--bg:#0f0b24;--fg:#f3f0ff;--muted:#b9b2d9;--accent:#ffd34d}
-  *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-       font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(circle at 50% 30%,#2a1d63,var(--bg) 70%);color:var(--fg);padding:32px 16px;text-align:center}
-  h1{font-size:clamp(2.4rem,8vw,4rem);margin:0 0 .2em;letter-spacing:.04em}
-  p{color:var(--muted);max-width:520px;line-height:1.5;margin:.4em auto}
-  .game{margin-top:28px;padding:18px 22px;border:1px solid #ffffff22;border-radius:16px;background:#ffffff0d}
-  .game b{color:var(--accent)}
-  footer{margin-top:40px;font-size:.9rem;color:var(--muted)}
-  a{color:var(--fg)}
+*{box-sizing:border-box;min-width:0}
+html{background:#16142a}
+body{margin:0;background:#16142a;color:#ecebf7;font:16px/1.55 Sora,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+.site{max-width:1120px;margin:0 auto;padding-left:max(5vw,16px,env(safe-area-inset-left,0px));padding-right:max(5vw,16px,env(safe-area-inset-right,0px))}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:calc(18px + env(safe-area-inset-top,0px)) 18px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:24px;letter-spacing:-.03em}
+.dots{display:inline-flex;gap:3px}.dots i{width:7px;height:7px;border-radius:50%}
+.nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;color:#cfcbef}.nav ul a:hover{color:#fff}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:24px;align-items:center;padding-block:clamp(40px,8vw,110px) clamp(32px,6vw,72px)}
+.hero h1{margin:0 0 16px;font-size:clamp(38px,6.5vw,68px);font-weight:800;line-height:1.04;letter-spacing:-.03em;max-width:13ch}
+.hero p{margin:0;color:#b8b4d8;font-size:18px;max-width:40ch}
+.glow{width:100%;max-width:320px;justify-self:end;aspect-ratio:1}
+.beam{stroke-dasharray:6 10}
+@media(prefers-reduced-motion:no-preference){.beam{animation:run 1.6s linear infinite}@keyframes run{to{stroke-dashoffset:-32}}}
+h2{margin:0 0 16px;font-size:22px}
+.games{padding-block:12px 48px}
+.card{display:flex;gap:18px;align-items:center;border-radius:20px;padding:16px;max-width:580px;background:#221f3d;border:1px solid #34305a}
+.card img{width:96px;height:96px;border-radius:22px;flex:none}
+.card b{display:block;font-size:20px}
+.card p{margin:4px 0 10px;font-size:15px;color:#b8b4d8}
+.pill{display:inline-block;font-size:13px;font-weight:700;border-radius:99px;padding:4px 12px;background:#F29E38;color:#2a1a05}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;padding-block:40px;border-top:1px solid #2d2a4c}
+.about p{margin:0;color:#c9c6e4}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;padding-block:0 40px}
+.contact p{margin:0;color:#c9c6e4}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-block:20px calc(20px + env(safe-area-inset-bottom,0px));border-top:1px solid #2d2a4c;color:#9a96bf;font-size:14px}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.glow{display:none}.about,.contact{grid-template-columns:1fr;gap:12px}.card img{width:72px;height:72px;border-radius:16px}.nav ul{gap:12px;font-size:14px}}
 </style>
 </head>
 <body>
-  <h1>Mistail</h1>
-  <p>Giochi per smartphone · Mobile games</p>
-  <div class="game">
-    <p><b>Lux Tower</b> — in arrivo su Android · coming soon</p>
-  </div>
+<div class="site">
+  <header class="nav">
+    <a class="logo" href="/">mistail <span class="dots" aria-hidden="true"><i style="background:#F29E38"></i><i style="background:#23B5A0"></i><i style="background:#F0607B"></i></span></a>
+    <nav><ul><li><a href="#giochi">Giochi</a></li><li><a href="#chi-siamo">Chi siamo</a></li><li><a href="#contatti">Contatti</a></li></ul></nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Piccoli giochi, fatti con cura.</h1>
+      <p>Giochi per smartphone, fatti in Italia.</p>
+    </div>
+    <svg class="glow" viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <radialGradient id="ga"><stop offset="0" stop-color="#F29E38" stop-opacity=".9"/><stop offset="1" stop-color="#F29E38" stop-opacity="0"/></radialGradient>
+        <radialGradient id="gb"><stop offset="0" stop-color="#23B5A0" stop-opacity=".9"/><stop offset="1" stop-color="#23B5A0" stop-opacity="0"/></radialGradient>
+        <radialGradient id="gc"><stop offset="0" stop-color="#F0607B" stop-opacity=".9"/><stop offset="1" stop-color="#F0607B" stop-opacity="0"/></radialGradient>
+      </defs>
+      <circle cx="60" cy="140" r="46" fill="url(#ga)"/><circle cx="100" cy="70" r="46" fill="url(#gb)"/><circle cx="148" cy="130" r="46" fill="url(#gc)"/>
+      <path class="beam" d="M60 140 L100 70 L148 130" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="60" cy="140" r="9" fill="#F29E38"/><circle cx="100" cy="70" r="9" fill="#23B5A0"/><circle cx="148" cy="130" r="9" fill="#F0607B"/>
+    </svg>
+  </section>
+
+  <section class="games" id="giochi">
+    <h2>I nostri giochi</h2>
+    <div class="card">
+      <img src="/img/luxtower-icon.jpg" width="96" height="96" alt="Icona di Lux Tower">
+      <div><b>Lux Tower</b><p>Un puzzle di luce: 500 livelli tra specchi, nebbia e cristalli.</p><span class="pill">Presto disponibile</span></div>
+    </div>
+  </section>
+
+  <section class="about" id="chi-siamo">
+    <h2>Chi siamo</h2>
+    <p>Mistail è uno studio nato nel 2026 in Piemonte. Ci piacciono i giochi che si imparano in un minuto e ti fanno pensare per giorni: è quello che proviamo a costruire.</p>
+  </section>
+
+  <section class="contact" id="contatti">
+    <h2>Contatti</h2>
+    <p>Per domande, collaborazioni o privacy scrivi a <a href="mailto:privacy@mistail.com">privacy@mistail.com</a>.</p>
+  </section>
+
   <footer>
-    <a href="/privacy/">Privacy policy</a> · <a href="mailto:privacy@mistail.com">privacy@mistail.com</a>
+    <span>© 2026 Mistail · Torrazza Piemonte (TO)</span>
+    <span><a href="/privacy/">Privacy di Lux Tower</a></span>
   </footer>
+</div>
 </body>
 </html>
